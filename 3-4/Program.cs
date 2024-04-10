@@ -11,12 +11,15 @@ namespace _3_4
         static void Main(string[] args)
         {
             IPrinter printer = new Console_Printer();
+            
+            int length = int.Parse(Console.ReadLine());
+            One_Dim<int> oneDimIntArr = new One_Dim<int>(length, true);
+            printer.Print<T>(oneDimIntArr);
 
-            One_Dim<int> oneDimIntArr = new One_Dim<int>(5, true);
-            printer.Print(oneDimIntArr);
-
-            Multi_Dim<double> multiDimDoubleArr = new Multi_Dim<double>(3, 3, true);
-            printer.Print(multiDimDoubleArr);
+            int rows = int.Parse(Console.ReadLine());
+            int columns = int.Parse(Console.ReadLine());
+            Multi_Dim<double> multiDimDoubleArr = new Multi_Dim<double>(rows, columns, true);
+            printer.Print<T>(multiDimDoubleArr);
         }
     }
 }
